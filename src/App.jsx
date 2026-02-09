@@ -1,10 +1,19 @@
 import './index.css'
+import Navbar from './components/Navbar.jsx'
+import Dashboard from './pages/Dashboard.jsx'
+import Tasks from './pages/Tasks.jsx'
+import Login from './pages/Login.jsx'
 
 function App() {
   return (
-    <div className="text-red-500 text-2xl">
-      Tailwind fonctionne
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/tasks" element={<Tasks />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </>
   )
 }
 
