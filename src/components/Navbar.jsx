@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 
 const Navbar = () => {
     return (
-        <nav className="bg-gray-800 text-white p-4 flex gap-4">
+        <nav className="bg-gray-800 text-white p-10 flex gap-4">
         <NavLink to="/Dashboard">
             Dashboard
             </NavLink>
