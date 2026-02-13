@@ -1,15 +1,17 @@
 import { useQuery } from "@tanstack/react-query"
 import Card from "../components/Card.jsx"
 
-
 const fetchTasks = async () => {
     const res = await fetch("http://localhost:3000/tasks")
     if (!res.ok) throw new Error("Erreur lors du fetch")
     return res.json()
   }
-  
+
 export default function Tasks() {
-  const { data: tasks, isLoading, isError } = useQuery(["tasks"], fetchTasks)
+    const { data: tasks, isLoading, isError } = useQuery({
+        queryKey: ["tasks"],
+        queryFn: fetchTasks,
+      })      
 
   if (isLoading) return <div>Chargement...</div>
   if (isError) return <div>Erreur lors du chargement</div>
